@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Titulo from '../components/titulo';
+import Titulo from '../components/Titulo';
 export default function Inicio() {
   const [rol, setRol] = useState('usuario'); 
   const [nombre, setNombre] = useState('');

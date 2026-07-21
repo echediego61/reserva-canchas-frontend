@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Titulo from '../components/titulo';
+import Titulo from '../components/Titulo';
 
 export default function NuevaReserva({ usuarioLogueado }) {
   const [error, setError] = useState('');
