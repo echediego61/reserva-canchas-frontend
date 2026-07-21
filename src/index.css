@@ -1,0 +1,401 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #333;
+}
+
+body { 
+  margin: 0; 
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(244, 246, 249, 0.25), rgba(244, 246, 249, 0.93)), 
+                    url('/src/assets/fondo.jpg'); 
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+nav {
+   background: #1e293b; padding: 1rem; display: flex; gap: 1rem; 
+  }
+nav a {
+   color: white; text-decoration: none; font-weight: bold; 
+  }
+nav a:hover {
+   color: #38bdf8; 
+  }
+.container {
+   max-width: 1000px; margin: 2rem auto; padding: 0 1rem;
+   }
+table {
+   width: 100%; border-collapse: collapse; margin-top: 1rem; background: white; 
+  }
+th, td {
+   padding: 12px; border: 1px solid #ddd; text-align: left; 
+  }
+th {
+   background-color: #0f172a; color: white; 
+  }
+.btn {
+   padding: 0.5rem 1rem; border: none; cursor: pointer; border-radius: 4px; font-weight: bold; 
+  }
+.btn-primary {
+   background: #2563eb; color: white;
+   }
+.btn-danger {
+   background: #dc2626; color: white; 
+  }
+.grid { 
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;
+ }
+.card { 
+  background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+ }
+
+.authContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  padding: 1rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+  
+  
+  background-image: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), 
+                    url('https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSCZ20ZHXIJgzpufq5sQXyrvNnJ47Ik6DhhlkvsxCJzwlPBBDLaWm-dxUcuJV2R9AdchnQnJ8oZ5DO51fTjJOMc4p-NPf548R3O');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+}
+
+.authCard {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.05);
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid #f1f5f9;
+  box-sizing: border-box;
+}
+
+.labelForm {
+  display: block;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #334155;
+  margin-bottom: 0.4rem;
+}
+
+.inputForm {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  outline: none;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.inputForm:focus {
+  border-color: #2563eb;
+}
+
+.btnSubmit {
+  width: 100%;
+  padding: 0.75rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+  transition: background-color 0.2s;
+}
+
+.btnSubmit:hover {
+  background-color: #1d4ed8;
+}
+
+.errorBox {
+  background-color: #fee2e2;
+  color: #991b1b;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  border: 1px solid #fca5a5;
+}
+.logoInstitucional {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+.successBox {
+  background-color: #dcfce7;
+  color: #166534;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  border: 1px solid #bbf7d0;
+  text-align: center;
+}
+.dashboardContainer {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+.welcomeSection {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  border: 1px solid #f1f5f9;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.welcomeSubtitle {
+  color: #64748b;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.featureCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.featureCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  border-color: #cbd5e1;
+}
+
+.cardIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.cardTitle {
+  color: #0f172a;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.cardDescription {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.btnAction {
+  display: inline-block;
+  text-align: center;
+  padding: 0.65rem;
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.btnAction:hover {
+  background-color: #1d4ed8;
+}
+.adminBadge {
+  display: inline-block;
+  background: #fef3c7;
+  color: #d97706;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.metricCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 5px solid #2563eb;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.metricCard.orange { border-left-color: #f97316; }
+.metricCard.green { border-left-color: #10b981; }
+
+.metricNumber {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0.25rem 0;
+}
+
+.metricLabel {
+  color: #64748b;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.canchasGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.canchaCard {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  overflow: hidden; 
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.canchaCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.08);
+}
+
+.canchaHeader {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.canchaBody {
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.canchaTitle {
+  font-size: 1.3rem;
+  color: #0f172a;
+  font-weight: 700;
+  margin: 0;
+}
+
+.canchaInfoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.badgeEstado {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.badgeEstado.disponible {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.badgeEstado.ocupado {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.badgeEstado.mantenimiento {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+.splitCanchasLayout {
+  display: grid;
+  grid-template-columns: 1fr; 
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 992px) {
+  .splitCanchasLayout {
+    grid-template-columns: 1.1fr 0.9fr; 
+    align-items: start;
+  }
+}
+.canchasSideLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mainCanchaImg {
+  width: 100%;
+  height: auto; 
+  object-fit: contain; 
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.galleryRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.thumbCanchaImg {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.infoUnpPanel {
+  background-color: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #2563eb;
+  margin-top: 1rem; 
+}
+
+.canchasSideRight {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; 
+}
