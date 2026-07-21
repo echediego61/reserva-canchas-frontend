@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Titulo from '../components/titulo';
+
 export default function NuevaReserva({ usuarioLogueado }) {
   const [error, setError] = useState('');
   const navigate = useNavigate();
@@ -11,17 +12,24 @@ export default function NuevaReserva({ usuarioLogueado }) {
     fecha: '',
     hora: ''
   });
+
+  // Definimos la constante de la API una sola vez arriba para reusarla
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
   useEffect(() => {
-    fetch('http://localhost:5000/api/canchas')
+    // 1. Modificado para traer las canchas dinámicamente
+    fetch(`${API_URL}/api/canchas`)
       .then(res => res.json())
-      .then(data => setCanchas(data));
-  }, []);
+      .then(data => setCanchas(data))
+      .catch(err => console.error('Error al cargar canchas:', err));
+  }, [API_URL]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setError('');
 
-    fetch('http://localhost:5000/api/reservas', {
+    // 2. Modificado para registrar la reserva en la nube
+    fetch(`${API_URL}/api/reservas`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData)
@@ -41,6 +49,7 @@ export default function NuevaReserva({ usuarioLogueado }) {
       console.error("Validación fallida:", err.message);
     });
   };
+
   return (
     <div className="dashboardContainer" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '80vh' }}>
       <div className="authCard" style={{ maxWidth: '460px', width: '100%', padding: '2.5rem' }}>

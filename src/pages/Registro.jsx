@@ -16,7 +16,10 @@ export default function Registro() {
     setError('');
     setExito(false);
 
-    fetch('http://localhost:5000/api/usuarios/registro', {
+    // Lee la variable de Render o recurre a localhost en tu PC
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
+    fetch(`${API_URL}/api/usuarios/registro`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ 

@@ -18,8 +18,12 @@ export default function Reservas() {
   const [editFecha, setEditFecha] = useState('');
   const [editHora, setEditHora] = useState('');
 
+  // Definimos la URL base de forma dinámica utilizando la variable de entorno
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
   const cargarReservas = (usuario) => {
-    fetch(`http://localhost:5000/api/reservas?id_usuario=${usuario.id_usuario}&rol=${usuario.rol}`)
+    // 1. Modificado para obtener el listado dinámicamente
+    fetch(`${API_URL}/api/reservas?id_usuario=${usuario.id_usuario}&rol=${usuario.rol}`)
       .then(async res => {
         const data = await res.json();
         if (!res.ok) throw new Error(data.error || 'Error al obtener las reservas');
@@ -40,7 +44,8 @@ export default function Reservas() {
 
   const manejarCrearReservaAdmin = (e) => {
     e.preventDefault();
-    fetch('http://localhost:5000/api/reservas', {
+    // 2. Modificado para crear reservas institucionales
+    fetch(`${API_URL}/api/reservas`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -74,7 +79,8 @@ export default function Reservas() {
   };
 
   const guardarCambios = (id_reserva) => {
-    fetch(`http://localhost:5000/api/reservas/${id_reserva}`, {
+    // 3. Modificado para actualizar los datos en la nube
+    fetch(`${API_URL}/api/reservas/${id_reserva}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -95,7 +101,8 @@ export default function Reservas() {
 
   const eliminarReserva = (id_reserva) => {
     if (window.confirm("¿Seguro que deseas cancelar esta reserva definitivamente?")) {
-        fetch(`http://localhost:5000/api/reservas/${id_reserva}`, {
+        // 4. Modificado para eliminar/cancelar registros de forma remota
+        fetch(`${API_URL}/api/reservas/${id_reserva}`, {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ rol: usuarioLogueado.rol })
@@ -121,7 +128,7 @@ export default function Reservas() {
               {usuarioLogueado?.rol === 'admin' ? ' Gestión Global de Reservas' : ' Mi Historial de Reservas'}
             </h2>
           </div>
-                    {usuarioLogueado?.rol === 'admin' && (
+          {usuarioLogueado?.rol === 'admin' && (
             <button 
               onClick={() => setMostrarFormCrear(!mostrarFormCrear)} 
               style={{ background: mostrarFormCrear ? '#64748b' : '#2563eb', color: 'white', border: 'none', padding: '0.65rem 1.2rem', borderRadius: '8px', fontWeight: '600', cursor: 'pointer', boxShadow: '0 4px 6px -1px rgba(37, 99, 235, 0.2)', transition: 'background-color 0.2s', fontSize: '0.9rem' }}

@@ -3,7 +3,9 @@ import fotoPrincipal from '../assets/Canchas.png';
 export default function Canchas() {
   const [canchas, setCanchas] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/api/canchas')
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+    
+    fetch(`${API_URL}/api/canchas`)
       .then(res => res.json())
       .then(data => setCanchas(data))
       .catch(err => console.error('Error al traer canchas:', err));

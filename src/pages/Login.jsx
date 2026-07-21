@@ -9,7 +9,11 @@ export default function Login({ onLogin }) {
   const handleSubmit = (e) => {
     e.preventDefault(); 
     setError('');
-    fetch('http://localhost:5000/api/usuarios/login', {
+
+    // Lee la variable de Render o recurre a localhost si pruebas localmente
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
+    fetch(`${API_URL}/api/usuarios/login`, {
       method: 'POST', 
       headers: { 'Content-Type': 'application/json' }, 
       body: JSON.stringify({ correo, password })
